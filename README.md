@@ -15,8 +15,9 @@ Python dependencies can be installed via `conda` from the `environment.yml` file
 conda env create -f environment.yml
 conda activate mol2image
 ```
-In addition to these dependencies, we also rely on an older version of `chemprop` forked [here](https://github.com/uhlerlab/chemprop). Clone this repository and install it as a package in the `mol2image` conda environment:
+In addition to these dependencies, we also rely on an older version of `chemprop` ([https://github.com/chemprop/chemprop](https://github.com/chemprop/chemprop)). Clone this repository, checkout the required version, and install it as a package in the `mol2image` conda environment:
 ```
 cd /path/to/chemprop
+git checkout f9581c59483310b2eddae278b3507980c54249fa
 pip install -e .
 ```
