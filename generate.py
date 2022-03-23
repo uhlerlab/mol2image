@@ -15,20 +15,18 @@ import sys
 def setup_args():
 
     options = argparse.ArgumentParser()
-    # save and directory options
-    options.add_argument('--save-dir', action="store")
-    options.add_argument('--datadir', action="store", default="data_cell_painting/images/")
-    options.add_argument('--train-metafile', action="store", default="data_cell_painting/metadata/datasplit_gen_train.csv")
-    options.add_argument('--val-metafile', action="store", default="data_cell_painting/metadata/datasplit_gen_test_easy.csv")
-    options.add_argument('--featfile', action="store", default=None)
+
+    options.add_argument('--save-dir', action="store", default='results')
+    options.add_argument('--datadir', action="store", default="data/images/")
+    options.add_argument('--pt-config-file', action="store", default='config.json')
+
+    options.add_argument('--train-metafile', action="store", default="data/metadata/datasplit_gen_train.csv")
+    options.add_argument('--val-metafile', action="store", default="data/metadata/datasplit_gen_test_easy.csv")
     options.add_argument('--dataset', action="store", default="cell-painting")
     
+    options.add_argument('--featfile', action="store", default=None)
     options.add_argument('--img-size', action="store", default=64, type=int)
 
-    # model parameters
-    options.add_argument('--pt-config-file', action="store")
-
-    # generation parameters
     options.add_argument('--n_sample', default=30, type=int, help='number of samples')
     options.add_argument('--seed', action="store", default=42, type=int)
     options.add_argument('--batch-size', action="store", dest="batch_size", default=20, type=int)
