@@ -126,7 +126,6 @@ class CondProGlowMPN(CondProGlow):
                                             )
         if self.pretrained is not None:
             self.cond_embedding.load_state_dict(torch.load(self.pretrained)['mol_embedding_net'])
-            print("Loaded mol checkpoint from %s" % self.pretrained)
         
         self.cond_reduce = nn.Linear(self.n_cond, 15)
         
