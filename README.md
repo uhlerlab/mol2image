@@ -37,3 +37,10 @@ python generate.py --save-dir /path/to/results --val-metafile data/metadata/data
 python generate.py --save-dir /path/to/results --val-metafile data/metadata/datasplit_gen_test_hard_ext10_unique.csv
 ```
 The generated and corresponding real images for the molecules will be saved to `/path/to/results/images`.
+
+### CellProfiler Evaluation
+To evaluate the generated images using `CellProfiler`, follow the installation instructions here: [https://github.com/CellProfiler/CellProfiler](https://github.com/CellProfiler/CellProfiler). Convert the generated .npz images to .png images (separate image for each channel) by running:
+```
+python convert_npz_to_png.py /path/to/results/images /path/to/results/png
+```
+Launch the CellProfiler GUI and open the pipeline from the file `mol2image.cpproj`. Then add the images in the directory `/path/to/results/png` to the pipeline and run.
