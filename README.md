@@ -21,3 +21,19 @@ cd /path/to/chemprop
 git checkout f9581c59483310b2eddae278b3507980c54249fa
 pip install -e .
 ```
+## Usage
+### Generating Images
+Download the pretrained model weights from [Google Drive](https://drive.google.com/drive/folders/1pSY62ylQj5YlHTrJ3CFZivim_vbvLLYy?usp=sharing) and place them in a directory called `pretrained`. To generate images corresponding to the molecules that were observed during training, run:
+```
+python generate.py --save-dir /path/to/results --val-metafile data/metadata/datasplit_gen_test_easy.csv
+```
+To generate images corresponding to the molecules that were held-out during training, run:
+```
+python generate.py --save-dir /path/to/results --val-metafile data/metadata/datasplit_gen_test_hard.csv
+```
+To generate images corresponding to the selected molecules for CellProfiler analysis, run:
+```
+python generate.py --save-dir /path/to/results --val-metafile data/metadata/datasplit_gen_test_easy_ext10.csv
+python generate.py --save-dir /path/to/results --val-metafile data/metadata/datasplit_gen_test_hard_ext10_unique.csv
+```
+The generated and corresponding real images for the molecules will be saved to `/path/to/results/images`.
