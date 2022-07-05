@@ -1,2 +1,0 @@
-{"modules": [{"type": "cond_proglowmpn", "n_flow": 32, "n_block": 1, "in_channel": 5, "img_size": 64, "checkpoint": "pretrained/64.pth", "n_cond": 512}, {"type": "cond_proglowmpn", "n_flow": 32, "n_block": 1, "in_channel": 5, "img_size": 32, "checkpoint": "pretrained/32.pth", "n_cond": 512}, {"type": "cond_glowmpn", "n_flow": 32, "n_block": 2, "in_channel": 5, "img_size": 16, "checkpoint": "pretrained/16.pth", "n_cond": 512}], "z_shapes": [[15, 32, 32], [15, 16, 16], [10, 8, 8], [40, 4, 4]], "temp": [1.0, 1.0, 1.0, 1.0]}
-
